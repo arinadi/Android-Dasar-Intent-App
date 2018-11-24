@@ -7,11 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.time.Instant;
-
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnMoveAct;
     private Button btnMoveActData;
+    private Button btnMoveActObj;
     private Button btnDialPhone;
 
     @Override
@@ -19,10 +18,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnMoveAct = (Button)findViewById(R.id.pindah_activity);
+        btnMoveAct = (Button)findViewById(R.id.move_activity);
         btnMoveAct.setOnClickListener(this);
-        btnMoveActData = (Button)findViewById(R.id.pindah_activity_w_data);
+
+        btnMoveActData = (Button)findViewById(R.id.move_activity_data);
         btnMoveActData.setOnClickListener(this);
+
+        btnMoveActObj = (Button)findViewById(R.id.move_activity_obj);
+        btnMoveActObj.setOnClickListener(this);
+
         btnDialPhone = (Button)findViewById(R.id.dial_phone);
         btnDialPhone.setOnClickListener(this);
     }
@@ -30,15 +34,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.pindah_activity:
-                Intent moveIntent = new Intent(MainActivity.this, PindahActivity.class);
+            case R.id.move_activity:
+                Intent moveIntent = new Intent(MainActivity.this, MoveActivity.class);
                 startActivity(moveIntent);
                 break;
-            case R.id.pindah_activity_w_data:
-                Intent pindahData = new Intent(MainActivity.this, PindahDataActivity.class);
-                pindahData.putExtra(PindahDataActivity.EXTRA_NAME, "Arinadi Nur Rohmad");
-                pindahData.putExtra(PindahDataActivity.EXTRA_AGE, 21);
-                startActivity(pindahData);
+            case R.id.move_activity_data:
+                Intent moveData = new Intent(MainActivity.this, MoveDataActivity.class);
+                moveData.putExtra(MoveDataActivity.EXTRA_NAME, "Arinadi Nur Rohmad");
+                moveData.putExtra(MoveDataActivity.EXTRA_AGE, 21);
+                startActivity(moveData);
+                break;
+            case R.id.move_activity_obj:
+                Person mPerson = new Person();
+                mPerson.setAge(21);
+                mPerson.setName("Arinadi Nur Rohmad");
+                mPerson.setCity("Yogyakarta");
+                mPerson.setEmail("arinadi.nur@gmail.com");
+                Intent moveObj = new Intent(MainActivity.this, MoveObjActivity.class);
+                moveObj.putExtra(MoveObjActivity.EXTRA_PERSON, mPerson);
+                startActivity(moveObj);
                 break;
             case R.id.dial_phone:
                 String phone = "085877599770";

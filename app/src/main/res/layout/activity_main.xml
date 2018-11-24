@@ -9,21 +9,21 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/pindah_activity"
+        android:id="@+id/move_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_v"
         android:text="Pindah Activity" />
 
     <Button
-        android:id="@+id/pindah_activity_w_data"
+        android:id="@+id/move_activity_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_v"
         android:text="Pindah Activity dgn Data" />
 
     <Button
-        android:id="@+id/pindah_activity_w_obj"
+        android:id="@+id/move_activity_obj"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_v"
@@ -34,10 +34,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_v"
-        android:text=" Deal A Number" />
+        android:text="Pangil Telp" />
 
     <Button
-        android:id="@+id/pindah_activity_4_res"
+        android:id="@+id/move_activity_res"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/margin_v"

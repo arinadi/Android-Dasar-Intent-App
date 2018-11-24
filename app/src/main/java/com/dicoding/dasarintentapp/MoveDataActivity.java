@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class PindahDataActivity extends AppCompatActivity {
+public class MoveDataActivity extends AppCompatActivity {
 
     public static String EXTRA_NAME = "extra_name";
     public static String EXTRA_AGE = "extra_age";
@@ -13,7 +13,7 @@ public class PindahDataActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pindah_data);
+        setContentView(R.layout.activity_move_data);
 
         txtDataReceived = (TextView)findViewById(R.id.data_receiver);
         String name = getIntent().getStringExtra(EXTRA_NAME);
