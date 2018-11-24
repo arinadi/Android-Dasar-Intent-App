@@ -1,54 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/padding_v"
-    android:paddingBottom="@dimen/padding_v"
     android:paddingLeft="@dimen/padding_h"
+    android:paddingTop="@dimen/padding_v"
     android:paddingRight="@dimen/padding_h"
-    android:orientation="vertical">
+    android:paddingBottom="@dimen/padding_v">
 
-    <Button
-        android:id="@+id/move_activity"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_v"
-        android:text="Pindah Activity" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/move_activity_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_v"
-        android:text="Pindah Activity dgn Data" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/move_activity_obj"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_v"
-        android:text="Pindah Activity dgn Object" />
+            <Button
+                android:id="@+id/move_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_v"
+                android:text="Pindah Activity" />
 
-    <Button
-        android:id="@+id/dial_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_v"
-        android:text="Pangil Telp" />
+            <Button
+                android:id="@+id/move_activity_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_v"
+                android:text="Pindah Activity dgn Data" />
 
-    <Button
-        android:id="@+id/move_activity_res"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin_v"
-        android:text="Pindah Activity untuk Result" />
+            <Button
+                android:id="@+id/move_activity_obj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_v"
+                android:text="Pindah Activity dgn Object" />
 
-    <TextView
-        android:id="@+id/hasil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Hasil dari Activity"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-</LinearLayout>
+            <Button
+                android:id="@+id/dial_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_v"
+                android:text="Pangil Telp" />
+
+            <Button
+                android:id="@+id/move_activity_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_v"
+                android:text="Pindah Activity untuk Result" />
+
+            <TextView
+                android:id="@+id/txtResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Hasil dari Activity"
+                android:textSize="24dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

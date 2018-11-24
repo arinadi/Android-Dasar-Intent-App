@@ -6,12 +6,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private Button btnMoveAct;
     private Button btnMoveActData;
     private Button btnMoveActObj;
     private Button btnDialPhone;
+    private Button btnMoveResult;
+    private TextView txtResult;
+    private int REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnDialPhone = (Button)findViewById(R.id.dial_phone);
         btnDialPhone.setOnClickListener(this);
+
+        btnMoveResult = findViewById(R.id.move_activity_result);
+        btnMoveResult.setOnClickListener(this);
+        txtResult = findViewById(R.id.txtResult);
+        
     }
 
     @Override
@@ -59,6 +68,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent dialPhone = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phone));
                 startActivity(dialPhone);
                 break;
+            case R.id.move_activity_result:
+                Intent moveForResultIntent = new Intent(MainActivity.this, MoveResultActivity.class);
+                startActivityForResult(moveForResultIntent, REQUEST_CODE);
+                break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_CODE) {
+            if (resultCode == MoveResultActivity.RESULT_CODE) {
+                String selectedValue = data.getStringExtra(MoveResultActivity.EXTRA_SELECTED_VALUE);
+                txtResult.setText(String.format("Hasil : %s", selectedValue));
+            }
         }
     }
 }

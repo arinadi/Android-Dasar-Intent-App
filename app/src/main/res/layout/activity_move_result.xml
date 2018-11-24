@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/layout_padding"
+    android:orientation="vertical"
+    tools:context=".MoveResultActivity">
+
+    <TextView
+        android:id="@+id/txtAskPet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_v"
+        android:text="Apa hewan kesukaan anda?" />
+
+    <RadioGroup
+        android:id="@+id/choosePet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rdKucing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kucing" />
+
+        <RadioButton
+            android:id="@+id/rdAnjing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Anjing" />
+
+        <RadioButton
+            android:id="@+id/rdBurung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Burung" />
+
+        <RadioButton
+            android:id="@+id/rdIkan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ikan" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kirim" />
+
+</LinearLayout>
